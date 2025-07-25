@@ -1,0 +1,268 @@
+/* ==========================================
+
+共通
+
+==========================================*/
+
+body {
+  display: flex; /* footer下部に固定のため */
+  flex-direction: column; /* footer下部に固定のため */
+  min-height: 100vh; /* footer下部に固定のため */
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #e4d7c7;
+  color: #4d451f;
+}
+
+.container {
+  margin: 0 auto;
+  flex-grow: 1; /* 利用可能な残りのスペースをすべて占める */
+}
+
+/* ==========================================
+
+ヘッダー
+
+==========================================*/
+
+header {
+  border-top: 8px solid #744c63;
+  padding-top: 50px;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 46px;
+}
+
+.ai_text {
+  margin-top: 32px;
+}
+
+.logout_text {
+  position: absolute;
+  right: 19px;
+  top: 18px;
+  font-size: 14px;
+  position: fixed;
+}
+
+.logout_text a {
+  text-decoration: none;
+  color: #744c63;
+}
+
+/* ==========================================
+
+メイン
+
+==========================================*/
+
+main {
+  flex-grow: 1; /* footer下部に固定のため */
+}
+
+.section1 {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  padding: 30px 0;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.box {
+  display: flex;
+  width: 230px;
+  height: 230px;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.box img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain; /* 画像のアスペクト比を維持 */
+  transition: ease-in 0.4s;
+}
+
+.box:hover {
+  background-color: #f6f1ec;
+  transition: ease-in 0.4s;
+}
+
+.box img:hover {
+  width: 85%;
+  height: 85%;
+  transition: ease-in 0.4s;
+}
+
+h2 {
+  margin-top: 20px;
+  font-size: 19px;
+  font-weight: bold;
+  font-family: "Shippori Mincho B1", serif;
+}
+
+/* ==========================================
+
+入力フォーム
+
+==========================================*/
+
+form {
+  max-width: 600px;
+  border-radius: 8px;
+  padding: 25px;
+  margin: 0 auto;
+}
+
+.form_g {
+  margin-top: 20px;
+}
+
+.form_g label {
+  margin-bottom: 80px;
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+  width: 600px;
+  padding: 12px 10px;
+  margin-top: 12px;
+  box-sizing: border-box; /* paddingとborderをwidthに含める */
+  border: none;
+  border-radius: 5px;
+  color: #333;
+  font-family: "Noto Sans JP", sans-serif;
+  transition: border-color 0.3s ease; /* ホバー時のアニメーション */
+}
+
+.form_g .record_label {
+  font-size: 16px;
+}
+
+/* フォーカス時 */
+input[type="text"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #c9b59e;
+  box-shadow: 0 0 5px #7e7c71;
+}
+
+textarea {
+  min-height: 60px;
+  resize: vertical; /* 縦方向のみリサイズ可能 */
+}
+
+/* ラジオボタンのラベル */
+.form_g input[type="radio"] + label {
+  cursor: pointer; /* カーソルをポインターに */
+  margin-bottom: 0; /* ラジオボタンのラベルの下余白は不要 */
+  width: 30px;
+}
+
+#record_wish,
+#record_read {
+  margin-right: 20px;
+}
+
+/* ラジオボタン */
+input[type="radio"] {
+  appearance: none; /* 要素の標準の見た目をリセット */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  margin-right: 5px;
+  position: relative;
+  top: -2px;
+  border: none;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked::before {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-color: #a38d72;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn {
+  margin-top: 40px;
+  display: block;
+  width: 100%; /* 親要素の幅いっぱいに */
+  padding: 15px 20px;
+  background-color: #744c63;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-bottom: 40px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transition: 0.2s;
+}
+
+/* 管理者ページに進むボタン */
+
+.admin_btn {
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
+  width: 100%; /* 親要素の幅いっぱいに */
+  padding: 15px 20px;
+  border: 1px solid #744c63;
+  color: #744c63;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+  background-color: #e4d7c7;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.admin_btn:hover {
+  background-color: #ffffff;
+  transition: 0.2s;
+}
+
+/* ==========================================
+
+フッター
+
+==========================================*/
+
+footer {
+  margin-top: 50px;
+  padding-bottom: 10px;
+}
+
+footer p {
+  font-size: 10px;
+}

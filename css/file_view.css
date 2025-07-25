@@ -1,0 +1,149 @@
+/* ==========================================
+
+共通
+
+==========================================*/
+
+body {
+  display: flex; /* footer下部に固定のため */
+  flex-direction: column; /* footer下部に固定のため */
+  min-height: 100vh; /* footer下部に固定のため */
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #e4d7c7;
+  color: #4d451f;
+}
+
+.container {
+  margin: 0 auto;
+  flex-grow: 1; /* 利用可能な残りのスペースをすべて占める */
+}
+
+/* ==========================================
+
+ヘッダー
+
+==========================================*/
+
+header {
+  border-top: 8px solid #744c63;
+  padding-top: 50px;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 46px;
+}
+
+.ai_text {
+  margin-top: 32px;
+}
+
+.logout_text {
+  position: absolute;
+  right: 19px;
+  top: 18px;
+  font-size: 14px;
+  position: fixed;
+}
+
+.logout_text a {
+  text-decoration: none;
+  color: #744c63;
+}
+
+/* ==========================================
+
+メイン
+
+==========================================*/
+
+main {
+  flex-grow: 1; /* footer下部に固定のため */
+}
+
+.upload-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  text-align: center;
+}
+.upload-container h2 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.upload-container p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.upload-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.upload-container input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 300px;
+}
+.upload-container input[type="submit"] {
+  display: inline-block; /* paddingやwidthを適用可能に */
+  padding: 8px 15px;
+  border: none;
+  font-size: 14px;
+  text-decoration: none; /* aタグのデフォルトの下線を消す */
+  background-color: #5e97cc;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.upload-container input[type="submit"]:hover {
+  background-color: #70a7db;
+}
+
+.back-link {
+  margin-top: 30px;
+  display: block;
+}
+.back-link a {
+  color: #4d451f;
+  font-size: 14px;
+  text-decoration: none;
+}
+.back-link a:hover {
+  text-decoration: underline;
+}
+.current-cover {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.current-cover img {
+  max-width: 200px;
+  max-height: 250px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+
+フッター
+
+==========================================*/
+
+footer {
+  margin-top: 50px;
+  padding-bottom: 10px;
+}
+
+footer p {
+  font-size: 10px;
+}

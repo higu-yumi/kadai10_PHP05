@@ -1,0 +1,248 @@
+/* ==========================================
+
+共通
+
+==========================================*/
+
+body {
+  display: flex; /* footer下部に固定のため */
+  flex-direction: column; /* footer下部に固定のため */
+  min-height: 100vh; /* footer下部に固定のため */
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #e4d7c7;
+  color: #4d451f;
+}
+
+.container {
+  margin: 0 auto;
+  flex-grow: 1; /* 利用可能な残りのスペースをすべて占める */
+}
+
+/* ==========================================
+
+ヘッダー
+
+==========================================*/
+
+header {
+  border-top: 8px solid #744c63;
+  padding-top: 50px;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 40px;
+}
+
+/* ==========================================
+
+メイン
+
+==========================================*/
+
+.p_text {
+  margin-top: 40px;
+}
+
+main {
+  flex-grow: 1; /* footer下部に固定のため */
+}
+
+.section1 {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  padding: 15px 0 55px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ==========================================
+
+入力フォーム
+
+==========================================*/
+
+form {
+  max-width: 500px;
+  border-radius: 8px;
+  padding: 25px;
+  margin: 0 auto;
+}
+
+.form_g {
+  margin-top: 20px;
+}
+
+.form_g label {
+  margin-bottom: 80px;
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 500px;
+  padding: 12px 10px;
+  margin-top: 12px;
+  box-sizing: border-box; /* paddingとborderをwidthに含める */
+  border: none;
+  border-radius: 5px;
+  color: #333;
+  font-family: "Noto Sans JP", sans-serif;
+  transition: border-color 0.3s ease; /* ホバー時のアニメーション */
+  background-color: #ffffff;
+}
+
+.form_g .user_label {
+  font-size: 16px;
+}
+
+/* フォーカス時 */
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #c9b59e;
+  box-shadow: 0 0 5px #7e7c71;
+}
+
+textarea {
+  min-height: 60px;
+  resize: vertical; /* 縦方向のみリサイズ可能 */
+}
+
+/* ラジオボタンのラベル */
+.form_g input[type="radio"] + label {
+  cursor: pointer; /* カーソルをポインターに */
+  margin-bottom: 0; /* ラジオボタンのラベルの下余白は不要 */
+  width: 30px;
+}
+
+#flag_user,
+#flag_admin {
+  margin-right: 20px;
+}
+
+/* ラジオボタン */
+input[type="radio"] {
+  appearance: none; /* 標準の見た目リセット */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  margin-right: 5px;
+  position: relative;
+  top: -2px;
+  border: none;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked::before {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-color: #a38d72;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#log_in {
+  margin-top: 40px;
+  display: block;
+  width: 100%; /* 親要素の幅いっぱいに */
+  padding: 15px 20px;
+  background-color: #429a8b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#log_in:hover {
+  opacity: 0.9;
+  transition: 0.2s;
+}
+
+.repass {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.repass .re {
+  font-weight: bold;
+}
+
+form a {
+  color: #4d451f;
+  text-decoration: none;
+}
+
+#regist {
+  margin-top: 40px;
+  display: block;
+  width: 100%; /* 親要素の幅いっぱいに */
+  padding: 15px 20px;
+  background-color: #c24c34;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#regist:hover {
+  opacity: 0.9;
+  transition: 0.2s;
+}
+
+.read_b {
+  position: fixed; /* ビューポートに固定 */
+  bottom: 40px;
+  right: 50px;
+  width: 300px;
+  height: auto;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+.wish_b {
+  position: fixed; /* ビューポートに固定 */
+  bottom: 50px;
+  right: 70px;
+  width: 220px;
+  height: auto;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+/* ==========================================
+
+フッター
+
+==========================================*/
+
+footer {
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+
+footer p {
+  font-size: 10px;
+}

@@ -1,0 +1,277 @@
+/* ==========================================
+
+共通
+
+==========================================*/
+
+body {
+  display: flex; /* footer下部に固定のため */
+  flex-direction: column; /* footer下部に固定のため */
+  min-height: 100vh; /* footer下部に固定のため */
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #f5f4f4;
+  color: #4d451f;
+  font-size: 15px;
+}
+
+.container {
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+  flex-grow: 1; /* 利用可能な残りのスペースをすべて占める */
+}
+
+/* ==========================================
+
+ヘッダー
+
+==========================================*/
+
+header {
+  padding-top: 50px;
+  text-align: center;
+  border-top: 8px solid #744c63;
+}
+
+h1 {
+  font-size: 46px;
+  font-family: "Shippori Mincho B1", serif;
+  margin-bottom: 40px;
+}
+
+.logout_text {
+  position: absolute;
+  right: 19px;
+  top: 18px;
+  font-size: 14px;
+  position: fixed;
+}
+
+.logout_text a {
+  text-decoration: none;
+  color: #744c63;
+}
+
+/* ==========================================
+
+メイン
+
+==========================================*/
+
+main {
+  flex-grow: 1; /* footer下部に固定のため */
+}
+
+/* ==========================================
+
+メイン ブックリスト
+
+==========================================*/
+
+.book_list {
+  display: flex; /* カードを横に並べるためのFlexboxを使う */
+  flex-direction: column;
+  gap: 20px; /* カード同士の間に隙間 */
+  align-items: center;
+}
+.book_card {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  padding: 20px 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  gap: 30px; /* 画像と詳細情報の間の隙間 */
+  align-items: center;
+}
+
+/* 本の画像枠 */
+.book_img {
+  flex-shrink: 0; /* 画像部分が縮まないようにする */
+  width: 100px; /* 画像の固定幅 */
+  height: 150px; /* 画像の固定高さ */
+  background-color: #ececec; /* グレーのプレースホルダー背景色 */
+  display: flex; /* 画像やプレースホルダー画像を中央に寄せるため */
+  align-items: center;
+  justify-content: center;
+  /*  overflow: hidden;  画像が枠からはみ出さないように */
+}
+
+/* .book_img 内の画像に対するスタイル */
+.book_img img {
+  width: 100%; /* 親要素の幅を基準に拡大・縮小 */
+  height: 100%; /* 親要素の高さを基準に拡大・縮小 */
+  object-fit: contain; /* 縦横比を保ち、枠内に全体を収める */
+  background-color: white; /* 余白部分を白で埋める */
+  display: block; /* img要素のデフォルトのマージンなどをリセット */
+}
+
+/* 本のイメージ画像 */
+.book_img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* アスペクト比を保ちつつ、枠に収める */
+}
+
+/* 詳細枠 */
+.book_details {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 詳細枠内の各要素を左寄せにする */
+  text-align: left;
+}
+
+/* 本のタイトル */
+.book_title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* 著者 */
+.book_author {
+  margin-bottom: 10px;
+}
+
+/* コメント */
+.book_comment_box {
+  width: 100%;
+  min-height: 40px; /* 少なくとも2行分の高さを確保 */
+  padding: 10px;
+  box-sizing: border-box;
+  line-height: 1.5;
+  border: 1px solid #c0c0c0;
+  border-radius: 8px;
+  text-align: left;
+  background-color: #ffffff;
+  word-wrap: break-word; /* 長い単語がボックスからはみ出すのを防ぐ */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* テキストをボックスの上端に揃える */
+  align-items: flex-start; /* 子要素を左端に揃える */
+}
+
+/* 読んだ日 */
+.read_date_info {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* 登録した日 */
+.registration_date {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+/* ボタンと登録日 */
+.registration_actions_container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end; /* 子要素（登録日とボタン）を下端に揃える */
+  gap: 20px; /* 登録日とボタンの間の隙間 */
+}
+
+.actions {
+  display: flex; /* ボタンを横並びにする */
+  gap: 10px; /* ボタン間の余白 */
+}
+
+/* 編集ボタン */
+.edit-btn {
+  display: inline-block; /* <a>をブロック要素みたくpaddingやwidthを適用可能に */
+  padding: 8px 15px;
+  border: none;
+  font-size: 14px;
+  text-decoration: none; /* aタグのデフォルトの下線を消す */
+  background-color: #799138;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+  background-color: #93ab4f;
+}
+
+/* 削除するボタン */
+.delete-btn {
+  display: inline-block; /* <a>をブロック要素みたくpaddingやwidthを適用可能に */
+  padding: 8px 15px;
+  border: none;
+  font-size: 14px;
+  text-decoration: none; /* aタグのデフォルトの下線を消す */
+  background-color: #cc657d;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #e6839a;
+}
+
+/* アップロードボタン */
+.upload-btn {
+  display: inline-block; /* <a>をブロック要素みたくpaddingやwidthを適用可能に */
+  padding: 8px 15px;
+  border: none;
+  font-size: 14px;
+  text-decoration: none; /* aタグのデフォルトの下線を消す */
+  background-color: #5e97cc;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #70a7db;
+}
+
+/* ==========================================
+
+トップに戻るボタン
+
+==========================================*/
+
+.top-btn {
+  margin-top: 50px;
+}
+
+.top-btn a {
+  display: inline-block;
+  padding: 14px 26px;
+  background-color: #a38e73;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  transition: 0.2s;
+}
+
+.top-btn a:hover {
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+/* ==========================================
+
+フッター
+
+==========================================*/
+
+footer {
+  margin-top: 50px;
+  padding-bottom: 10px;
+}
+
+footer p {
+  font-size: 10px;
+}

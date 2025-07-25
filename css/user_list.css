@@ -1,0 +1,182 @@
+/* ==========================================
+
+共通
+
+==========================================*/
+
+body {
+  display: flex; /* footer下部に固定のため */
+  flex-direction: column; /* footer下部に固定のため */
+  min-height: 100vh; /* footer下部に固定のため */
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #e4d7c7;
+  color: #4d451f;
+  font-size: 15px;
+}
+
+.container {
+  margin: 0 auto;
+  flex-grow: 1; /* 利用可能な残りのスペースをすべて占める */
+}
+
+/* ==========================================
+
+ヘッダー
+
+==========================================*/
+
+header {
+  border-top: 8px solid #744c63;
+  padding-top: 50px;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 27px;
+}
+
+.ai_text {
+  margin-top: 32px;
+}
+
+.logout_text {
+  position: absolute;
+  right: 19px;
+  top: 18px;
+  font-size: 14px;
+  position: fixed;
+}
+
+.logout_text a {
+  text-decoration: none;
+  color: #744c63;
+}
+
+/* ==========================================
+
+メイン
+
+==========================================*/
+
+main {
+  flex-grow: 1; /* footer下部に固定のため */
+}
+
+h2 {
+  margin-top: 20px;
+  font-size: 19px;
+  font-weight: bold;
+  font-family: "Shippori Mincho B1", serif;
+}
+
+/* テーブルデザイン */
+.user_list_table {
+  width: 90%;
+  margin: 20px auto;
+  padding: 40px 30px;
+  overflow: hidden; /* 角丸を適用するためにはみ出しを隠す */
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.user_list_table th,
+.user_list_table td {
+  padding: 14px;
+  text-align: left;
+}
+
+.user_list_table th {
+  background-color: #ececea;
+  text-transform: uppercase; /* 大文字にする */
+}
+
+/* 権限表示 */
+.status_admin {
+  color: #b12828;
+  background-color: #fbe3e6;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.status_general {
+  color: #2c76c0;
+  background-color: #e4eff7;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+/* ユーザーがいない場合のメッセージ */
+.no_users_message {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.2em;
+  color: #777;
+  padding: 20px;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.btn-danger {
+  font-size: 12px;
+  text-decoration: none;
+  background-color: #d0923a;
+  color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  font-size: 12px;
+  text-decoration: none;
+  background-color: #5ea36f;
+  color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+/* ==========================================
+
+トップに戻るボタン
+
+==========================================*/
+
+.top-btn {
+  margin-top: 50px;
+}
+
+.top-btn a {
+  display: inline-block;
+  padding: 14px 26px;
+  background-color: #a38e73;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  transition: 0.2s;
+}
+
+.top-btn a:hover {
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+/* ==========================================
+
+フッター
+
+==========================================*/
+
+footer {
+  margin-top: 50px;
+  padding-bottom: 10px;
+}
+
+footer p {
+  font-size: 10px;
+}
